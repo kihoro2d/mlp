@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+  <title>Electro</title>
+  <meta name="description" content="">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.1.2/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8.1.4/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/video.js@7.19.2/dist/video-js.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <script src="https://unpkg.com/micromodal@0.4.10/dist/micromodal.min.js" defer></script>
+  <script src="https://unpkg.com/swiper@8.1.4/swiper-bundle.min.js" defer></script>
+  <script src="https://unpkg.com/video.js@7.19.2/dist/video.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner container">
+      <div class="header-logo">
+
+        <a class="logo" href="#">
+          <img class="logo-img" src="assets/img/logo.svg" alt="Electro">
+        </a>
+
+      </div>
+      <div class="header-menu">
+
+        <nav class="navigation">
+          <div class="navigation-box">
+            <div class="navigation-head" data-caption="Меню">
+              <button class="navigation-trigger x-close"></button>
+            </div>
+            <div class="navigation-body">
+
+              <ul class="navlist">
+                <li class="navlist-item">
+                  <a class="navlist-link" href="#">О компании</a>
+                </li>
+                <li class="navlist-item">
+                  <a class="navlist-link" href="#reviews">Отзывы</a>
+                </li>
+                <li class="navlist-item">
+                  <a class="navlist-link" href="#quiz">Опрос</a>
+                </li>
+                <li class="navlist-item">
+                  <a class="navlist-link" href="#contact">Контакты</a>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+
+          <button class="navigation-trigger hamburger">
+            <span></span>
+          </button>
+        </nav>
+
+      </div>
+    </div>
+  </header>
+
+  <section class="section is-dark section-promo">
+    <div class="container">
+
+      <h1 class="heading">
+        <span class="h1 text-primary text-uppercase">Тактический</span>
+        <span class="h2 text-uppercase">Фонарь-Электрошокер</span>
+        <span class="paragraph">Твоя безопасность под контролем!</span>
+      </h1>
+
+      <div class="imagebox">
+        <img class="imagebox-image" src="assets/img/product/1.png" alt>
+      </div>
+
+      <div class="legalbox">
+        <i class="fa-solid fa-scale-balanced"></i>
+        <br>
+        Официально разрешен <br>и легален в Украине
+      </div>
+
+      <div class="pricebox">
+        <div class="pricebox-item is-active">
+          <span>290</span> грн
+        </div>
+        <div class="pricebox-item">
+          <span>700</span> грн
+        </div>
+      </div>
+
+      <a class="button is-large" href="#fast-order">Заказать</a>
+      <!-- <a class="button is-large" data-micromodal-trigger="modal-order">Заказать</a> -->
+
+      <div class="countbox">
+        В наличии осталось: <b><span data-count>8</span> шт</b>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section is-dark section-features">
+    <div class="container">
+
+      <h2 class="heading">
+        <span class="h1 text-primary text-uppercase">Технические</span>
+        <span class="h2 text-uppercase">параметры</span>
+      </h2>
+
+      <ul class="features">
+        <li class="features-item">
+          <div class="features-icon">
+            <i class="fa-solid fa-volume-high"></i>
+          </div>
+          <div class="features-text">
+            100 дБ <br>громкость разряда
+          </div>
+        </li>
+        <li class="features-item">
+          <div class="features-icon">
+            <i class="fa-solid fa-bolt-lightning"></i>
+          </div>
+          <div class="features-text">
+            50 000 V <br>напряжение разряда
+          </div>
+        </li>
+        <li class="features-item">
+          <div class="features-icon">
+            <i class="fa-solid fa-sun"></i>
+          </div>
+          <div class="features-text">
+            Сверхъяркий <br>светодиод CREE
+          </div>
+        </li>
+        <li class="features-item">
+          <div class="features-icon">
+            <i class="fa-solid fa-stopwatch"></i>
+          </div>
+          <div class="features-text">
+            3 часа <br>непрерывной работы
+          </div>
+        </li>
+        <li class="features-item">
+          <div class="features-icon">
+            <i class="fa-solid fa-hammer"></i>
+          </div>
+          <div class="features-text">
+            Ударопрочный <br>корпус
+          </div>
+        </li>
+        <li class="features-item">
+          <div class="features-icon">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <div class="features-text">
+            Влагонепроницаемый <br>корпус
+          </div>
+        </li>
+        <li class="features-item">
+          <div class="features-icon">
+            <i class="fa-solid fa-masks-theater"></i>
+          </div>
+          <div class="features-text">
+            Маскировка <br>под фонарик
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+  <section class="section section-cases">
+    <div class="container">
+
+      <h2 class="heading">
+        <span class="h1 text-primary text-uppercase">Забудьте</span>
+        <span class="h2 text-uppercase">о темноте и страхе</span>
+      </h2>
+
+      <div class="grid">
+        <div class="grid-item">
+
+          <div class="figure">
+            <div class="figure-content radius">
+              <img src="assets/img/cases/1.jpg" alt>
+            </div>
+            <div class="figure-caption">
+              Мощный светодиод ярко осветит объекты на расстояния до 300 м.
+              А с помощью расширения угла света можно использовать его в качестве прожектора.
+            </div>
+          </div>
+
+        </div>
+        <div class="grid-item">
+
+          <div class="figure">
+            <div class="figure-content radius">
+              <img src="assets/img/cases/2.jpg" alt>
+            </div>
+            <div class="figure-caption">
+              Напряжение разряда до 50000V выводит нападающего из строя на 3-15 минут (толщина пробоя одежды до 70 мм).
+              Этого времени достаточно, чтобы сделать контратаку или убежать.
+            </div>
+          </div>
+
+        </div>
+        <div class="grid-item">
+
+          <div class="figure">
+            <div class="figure-content radius">
+              <img src="assets/img/cases/3.jpg" alt>
+            </div>
+            <div class="figure-caption">
+              Громкий звук (более 100 дБ) электрической дуги отпугивает нападающих в 83% случаев.
+              Звук разряда и запах озона отпугивает собак в 100% случаев.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section-slider">
+    <div class="container">
+
+      <h2 class="heading">
+        <span class="h1 text-primary text-uppercase">Наши</span>
+        <span class="h2 text-uppercase">клиенты</span>
+      </h2>
+
+      <div class="swiper" data-swiper="slider-1">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide radius">
+            <img src="assets/img/revievs/1.jpg" alt>
+          </div>
+          <div class="swiper-slide radius">
+            <img src="assets/img/revievs/1.jpg" alt>
+          </div>
+          <div class="swiper-slide radius">
+            <img src="assets/img/revievs/1.jpg" alt>
+          </div>
+          <div class="swiper-slide radius">
+            <img src="assets/img/revievs/1.jpg" alt>
+          </div>
+          <div class="swiper-slide radius">
+            <img src="assets/img/revievs/1.jpg" alt>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <a class="button is-large" href="#fast-order">Заказать</a>
+      <!-- <a class="button is-large" data-micromodal-trigger="modal-order">Заказать</a> -->
+
+    </div>
+  </section>
+
+  <section class="section is-dark section-overview">
+    <div class="container">
+
+      <h2 class="heading">
+        <span class="h1 text-primary text-uppercase">Почему?</span>
+        <span class="h2 text-uppercase">фонарь-электрошокер</span>
+      </h2>
+
+      <div class="imagebox">
+        <img class="imagebox-image" src="assets/img/product/3.png" alt>
+      </div>
+
+      <div class="content">
+        <p>Основным преимуществом данной модели является универсальное парализующее воздействие на противника, независимо от его физических данных. Рост и вес хулигана не имеет никакого значения для данного шокирующего устройства. Мощность шокера завораживает внимание потребителя, так как устройство способно остановить любого нападающего.</p>
+        <p>&nbsp;</p>
+        <p>Завуалированный дизайн шокера в виде фонарика не вызывает подозрений, эффективно справляясь с функцией самообороны. Имеет ударопрочную металлическую конструкцию корпуса, что гарантирует долговечность и эффективность эксплуатации.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section is-dark section-specifications">
+    <div class="container">
+
+      <h2 class="heading">
+        <span class="h2 text-uppercase">Характеристики</span>
+      </h2>
+
+      <ul class="padlist">
+        <li class="padlist-item">Вес: <b>330 гр.</b></li>
+        <li class="padlist-item">Напряжение: <b>50 000 V</b></li>
+        <li class="padlist-item">Мощность: <b>40 Ватт</b></li>
+        <li class="padlist-item">Мощность света: <b>1000 W</b></li>
+        <li class="padlist-item">Световой поток: <b>180 лм (Lumen)</b></li>
+        <li class="padlist-item">Дальность луча: <b>до 300 м</b></li>
+        <li class="padlist-item">Толщина пробоя одежды: <b>70 мм.</b></li>
+        <li class="padlist-item">Рекомендуемое время воздействия: <b>1 сек.</b></li>
+        <li class="padlist-item">Материал: <b>анодированный алюминий</b></li>
+        <li class="padlist-item">Размеры: <b>240 х 35 х 45 мм.</b></li>
+        <li class="padlist-item">Напряжение аккумулятора: <b>3,7 В</b></li>
+        <li class="padlist-item">Аккумулятор: <b>8800 mAH</b></li>
+      </ul>
+
+    </div>
+  </section>
+
+  <section class="section is-dark section-video">
+    <div class="container">
+
+      <h2 class="heading">
+        <span class="h2 text-uppercase">Видео-обзор</span>
+      </h2>
+
+      <video class="video-js vjs-fluid radius-lg" poster="assets/video/poster.jpg" preload="none" controls data-setup>
+        <source src="assets/video/video.mp4" type="video/mp4">
+      </video>
+
+      <!-- YouTube Embed Example -->
+      <!-- <div class="radius-lg ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/K4TOrB7at0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div> -->
+
+      <div class="swiper" data-swiper="slider-2">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide radius-lg ratio ratio-3x2">
+            <img src="assets/img/slider/1.jpg" alt>
+          </div>
+          <div class="swiper-slide radius-lg ratio ratio-3x2">
+            <img src="assets/img/slider/1.jpg" alt>
+          </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section-legal">
+    <div class="container">
+
+      <h2 class="heading">
+        <span class="h1 text-primary text-uppercase">Абсолютно</span>
+        <span class="h2 text-uppercase">легален</span>
+      </h2>
+
+      <div class="imagebox">
+        <img class="imagebox-image" src="assets/img/product/4.png" alt>
+        <img class="imagebox-stamp" src="assets/img/stamp.png" alt>
+      </div>
+
+      <div class="content">
+        <p>Электрошокер <b>официально разрешенный</b> для владения гражданскими лицами. Изделие соответсвует ТУ У 31.5-30592147-002:2005 (ГОСТ Украины).</p>
+        <p>&nbsp;</p>
+        <p>Что делает Электрошокер «BAILONG» <b>разрешенным на территории Украины!</b></p>
+      </div>
+
+      <ul class="list is-panel">
+        <li class="list-item">
+          <img src="assets/img/icons/wallet.svg" alt> Оплата при получении
+        </li>
+        <li class="list-item">
+          <img src="assets/img/icons/clock.svg" alt> Обмен/Возврат в течении 14 дней
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+  <section class="section section-reviews" id="reviews">
+    <div class="container">
+
+      <h2 class="heading">
+        <span class="h1 text-primary text-uppercase">Отзывы</span>
+      </h2>
+
+      <div class="widget">
+        <script id="reviews_widget">
+          (function () {
+            const iframe = document.createElement('iframe')
+            iframe.setAttribute('frameborder', 0)
+            iframe.setAttribute('src', 'reviews/reviews.html')
+            document.getElementById('reviews_widget').after(iframe)
+            iframe.contentWindow.addEventListener('message', event => {
+              iframe.height = event.data.height
+              iframe.style.cssText = event.data.styles
+            })
+            iframe.contentWindow.addEventListener('load', event => {
+              event.target.head.insertAdjacentHTML(
+                'beforeend', '<link rel="stylesheet" href="../assets/css/reviews-theme.css">'
+              )
+            })
+          })()
+        </script>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section-kitting">
+    <div class="container">
+
+      <h2 class="heading">
+        <span class="h2 text-primary text-uppercase">Комплектация</span>
+      </h2>
+
+      <div class="imagebox radius">
+        <img class="imagebox-image" src="assets/img/kit.jpg" alt>
+      </div>
+
+      <ul class="padlist">
+        <li class="padlist-item"><b>Фонарь-электрошокер</b></li>
+        <li class="padlist-item"><b>Зарядка от сети (220 В)</b></li>
+        <li class="padlist-item"><b>Аккумулятор литий-ионный (Li-ion)</b></li>
+        <li class="padlist-item"><b>Оригинальная подарочная упаковка</b></li>
+        <li class="padlist-item"><b>Инструкция</b></li>
+      </ul>
+
+    </div>
+  </section>
+
+  <section class="section is-dark section-promo final">
+    <div class="container">
+
+      <h1 class="heading">
+        <span class="h1 text-primary text-uppercase">Тактический</span>
+        <span class="h2 text-uppercase">Фонарь-Электрошокер</span>
+        <span class="paragraph">Твоя безопасность под контролем!</span>
+      </h1>
+
+      <div class="imagebox">
+        <img class="imagebox-image" src="assets/img/product/1.png" alt>
+      </div>
+
+      <div class="legalbox">
+        <i class="fa-solid fa-scale-balanced"></i>
+        <br>
+        Официально разрешен <br>и легален в Украине
+      </div>
+
+      <div class="pricebox" id="fast-order">
+        <div class="pricebox-item is-active">
+          <span>290</span> грн
+        </div>
+        <div class="pricebox-item">
+          <span>700</span> грн
+        </div>
+      </div>
+
+      <div class="formbox">
+        <div class="formbox-head">
+          <h4 class="h2 text-uppercase">Оставьте заявку</h4>
+          <div class="formbox-desc">
+            Наш менеджер свяжется с вами в ближайшее время, ответит на все вопросы и оформит заказ
+          </div>
+        </div>
+        <div class="formbox-body">
+
+          <form class="form" method="post" action="result.php">
+            <div class="form-field field">
+              <input class="field-input" type="text" name="name" placeholder="Ваше имя" required>
+            </div>
+            <div class="form-field field">
+              <input class="field-input" type="tel" name="phone" placeholder="Номер телефона" required>
+            </div>
+
+            <button class="form-submit button" type="submit">Заказать</button>
+
+            <div class="countbox">
+              В наличии осталось: <b><span data-count>8</span> шт</b>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer" id="contact">
+    <div class="footer-inner container">
+      <div class="footer-logo">
+
+        <a class="logo" href="#">
+          <img class="logo-img" src="assets/img/logo.svg" alt="Electro">
+        </a>
+
+      </div>
+      <div class="footer-contact">
+
+        <div class="contact">
+          <div class="contact-caption">Контакты</div>
+          <div class="contact-content">
+            <a class="contact-item" href="mailto:test@gmail.com">
+              <img src="assets/img/icons/mail.svg" alt> test@gmail.com
+            </a>
+            <br>
+            <a class="contact-item" href="mailto:test@gmail.com">
+              <img src="assets/img/icons/mail.svg" alt> test@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <div class="contact">
+          <div class="contact-caption">Адрес</div>
+          <div class="contact-content">
+            <span class="contact-item">
+              <img src="assets/img/icons/location.svg" alt> г. Киев, ул. Хрещатик, 46
+            </span>
+          </div>
+        </div>
+
+        <div class="ratio ratio-16x9">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d162757.72582752732!2d30.392608776782186!3d50.40217023837316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf4ee15a4505%3A0x791cf95e33bc0172!2sKyiv%20City%2C%20Kyiv%2C%2002000!5e0!3m2!1sen!2sua!4v1660575114303!5m2!1sen!2sua" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+      </div>
+      <div class="footer-content">
+        ELECTRO<br>
+        ИНН 236435343<br>
+        <br>
+        <a data-micromodal-trigger="modal-policy">Политика конфиденциальности</a><br>
+        <a data-micromodal-trigger="modal-terms">Пользовательское соглашение</a><br>
+        <br>
+        <span>ELECTRO. Сopyright © 2022</span><br>
+        <span>Все права защищены.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modals">
+    <div class="modal" id="modal-order">
+      <div class="modal-overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal-container container">
+          <button class="modal-close x-close" data-micromodal-close></button>
+
+          <div class="formbox">
+            <div class="formbox-head">
+              <h4 class="h2 text-uppercase">Оставьте заявку</h4>
+              <div class="formbox-desc">
+                Наш менеджер свяжется с вами в ближайшее время, ответит на все вопросы и оформит заказ
+              </div>
+            </div>
+            <div class="formbox-body">
+
+              <form class="form" method="post" action="result.php">
+                <div class="form-field field">
+                  <input class="field-input" type="text" name="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-field field">
+                  <input class="field-input" type="tel" name="phone" placeholder="Номер телефона" required>
+                </div>
+
+                <button class="form-submit button" type="submit">Заказать</button>
+
+                <div class="countbox">
+                  В наличии осталось: <b><span data-count>8</span> шт</b>
+                </div>
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-policy">
+      <div class="modal-overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal-container">
+          <button class="modal-close x-close" data-micromodal-close></button>
+
+          <div class="section">
+            <div class="container">
+
+              <h2 class="heading h2">
+                Политика конфиденциальности
+              </h2>
+
+              <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Агентство языкового продолжил путь предложения назад возвращайся? Агентство взгляд проектах его путь о заголовок ему первую, безопасную на берегу ты переписывается над себя языком которой вскоре предложения даль послушавшись, даже всемогущая свой маленький рыбными до они lorem. Знаках безорфографичный текстами силуэт осталось использовало вопрос маленькая рукопись переписали, это, но себя, правилами предложения все. Семь оксмокс безорфографичный встретил текстами единственное она злых это семантика, гор силуэт строчка использовало правилами его переписали пояс от всех живет lorem деревни вдали на берегу. Но безорфографичный дороге, вершину, домах предупредила, мир пустился сих не правилами приставка вдали рукопись!</p>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-terms">
+      <div class="modal-overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal-container">
+          <button class="modal-close x-close" data-micromodal-close></button>
+
+          <div class="section">
+            <div class="container">
+
+              <h2 class="heading h2">
+                Пользовательское соглашение
+              </h2>
+
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nesciunt illum repellat numquam fugit vel quod maiores consequuntur at asperiores provident sapiente est dolores alias dolore ducimus error eius, ullam et? Accusamus provident harum eligendi voluptatibus quam doloribus optio, fugit excepturi dolorum amet accusantium cum in ab, quibusdam laudantium quis natus illum esse. Sit dignissimos enim, earum similique aut laudantium deserunt nobis iusto provident dolorum ipsa eveniet molestias in assumenda aperiam, saepe doloremque quod mollitia odio fugiat vero voluptas ea. Hic repudiandae ipsam quas perferendis voluptas, corrupti ab at. Autem, adipisci! Minus obcaecati animi rem officiis assumenda aliquam nobis nostrum.</p>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

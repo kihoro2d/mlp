@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+  <title>Willson</title>
+  <meta name="description" content="">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css">
+  <link rel="stylesheet" href="https://unpkg.com/image-compare-viewer@1.5.0/dist/image-compare-viewer.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8.1.4/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/video.js@7.19.2/dist/video-js.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <script src="https://unpkg.com/image-compare-viewer@1.5.0/dist/image-compare-viewer.min.js" defer></script>
+  <script src="https://unpkg.com/micromodal@0.4.10/dist/micromodal.min.js" defer></script>
+  <script src="https://unpkg.com/swiper@8.1.4/swiper-bundle.min.js" defer></script>
+  <script src="https://unpkg.com/video.js@7.19.2/dist/video.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner container">
+      <div class="header-logo">
+        <a class="logo" href="#">Willson</a>
+      </div>
+      <div class="header-lang">
+        <ul class="lang">
+          <li class="lang-item">
+            <a class="lang-link" href="#">ua</a>
+          </li>
+          <li class="lang-item is-active">
+            <a class="lang-link">ru</a>
+          </li>
+        </ul>
+      </div>
+      <div class="header-menu">
+
+        <nav class="navigation">
+          <div class="navigation-box">
+            <div class="navigation-head" data-caption="Меню">
+              <button class="navigation-trigger x-close" data-micromodal-close></button>
+            </div>
+            <div class="navigation-body">
+
+              <ul class="navlist">
+                <li class="navlist-item">
+                  <a class="navlist-link" data-micromodal-trigger="modal-about">О компании</a>
+                </li>
+                <li class="navlist-item">
+                  <a class="navlist-link" href="#reviews">Отзывы</a>
+                </li>
+                <li class="navlist-item">
+                  <a class="navlist-link" href="#results">Результаты клиентов</a>
+                </li>
+                <li class="navlist-item">
+                  <a class="navlist-link" href="#extra">Другие товары</a>
+                </li>
+                <li class="navlist-item">
+                  <a class="navlist-link" data-micromodal-trigger="modal-contact">Контакты</a>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+
+          <button class="navigation-trigger hamburger">
+            <span></span>
+          </button>
+        </nav>
+
+      </div>
+    </div>
+  </header>
+
+  <section class="section section-promo">
+    <div class="container">
+
+      <h1 class="heading h1">
+        Невидимая защита вашего автомобиля
+      </h1>
+
+      <div class="grid">
+        <div class="grid-item">
+
+          <div class="panel is-inline">
+            <div class="panel-icon is-large ratio">
+              <img src="assets/img/icons/a1.png" alt>
+            </div>
+            <div class="panel-body">
+              <p>В 7-10 раз <strong>дешевле</strong> <br>автосервиса</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="grid-item">
+
+          <div class="panel is-inline">
+            <div class="panel-icon is-large ratio">
+              <img src="assets/img/icons/a2.png" alt>
+            </div>
+            <div class="panel-body">
+              <p><strong>Восстановит</strong> краску <br>до заводского состояния</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="grid-item">
+
+          <div class="panel is-inline">
+            <div class="panel-icon is-large ratio">
+              <img src="assets/img/icons/a3.png" alt>
+            </div>
+            <div class="panel-body">
+              <p><strong>Защитит</strong> от грязи <br>и пыли</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="promotion">
+        <img class="promotion-image" src="assets/img/product.png" alt>
+        <div class="promotion-sale">
+          <div class="promotion-sale-value">-38%</div>
+          <div class="promotion-sale-extra" data-value="скидка скидка скидка "></div>
+        </div>
+        <div class="promotion-price">
+          <ins>489<small>₴</small></ins>
+          <del>790</del>
+        </div>
+        <div class="promotion-gift" data-micromodal-trigger="modal-deferred" data-deferred-cancel></div>
+      </div>
+
+      <button class="button is-large is-fluid" data-micromodal-trigger="modal-order">Заказать</button>
+
+    </div>
+  </section>
+
+  <section class="section section-issues">
+    <div class="container">
+
+      <h2 class="heading h2">
+        <b>99% автомобилей</b><br>
+        <span>сталкиваются с этим</span>
+      </h2>
+
+      <div class="grid has-2-cols">
+        <div class="grid-item">
+
+          <div class="panel is-tile">
+            <div class="panel-icon is-giant ratio">
+              <img src="assets/img/icons/i1.png" alt>
+            </div>
+            <div class="panel-body">
+              <p>Неправильная <br>мойка</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="grid-item">
+
+          <div class="panel is-tile">
+            <div class="panel-icon is-giant ratio">
+              <img src="assets/img/icons/i2.png" alt>
+            </div>
+            <div class="panel-body">
+              <p>Грязные <br>дороги</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="grid-item">
+
+          <div class="panel is-tile">
+            <div class="panel-icon is-giant ratio">
+              <img src="assets/img/icons/i3.png" alt>
+            </div>
+            <div class="panel-body">
+              <p>Неосторожные <br>открытия дверей</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="grid-item">
+
+          <div class="panel is-tile">
+            <div class="panel-icon is-giant ratio">
+              <img src="assets/img/icons/i4.png" alt>
+            </div>
+            <div class="panel-body">
+              <p>Выгорание <br>на солнце</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="grid-item">
+
+          <div class="panel is-tile">
+            <div class="panel-icon is-giant ratio">
+              <img src="assets/img/icons/i5.png" alt>
+            </div>
+            <div class="panel-body">
+              <p>Случайные <br>царапины</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="grid-item">
+
+          <div class="panel is-tile">
+            <div class="panel-icon is-giant ratio">
+              <img src="assets/img/icons/i6.png" alt>
+            </div>
+            <div class="panel-body">
+              <p>Повреждения от <br>погодных условий</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="swiper is-overflow-visible" data-swiper="comparison">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide ratio ratio-4x3">
+            <div class="comparison is-fluid">
+              <img src="assets/img/results/1.jpg" alt>
+              <img src="assets/img/results/2.jpg" alt>
+            </div>
+          </div>
+          <div class="swiper-slide ratio ratio-4x3">
+            <div class="comparison is-fluid">
+              <img src="assets/img/results/1.jpg" alt>
+              <img src="assets/img/results/2.jpg" alt>
+            </div>
+          </div>
+          <div class="swiper-slide ratio ratio-4x3">
+            <div class="comparison is-fluid">
+              <img src="assets/img/results/1.jpg" alt>
+              <img src="assets/img/results/2.jpg" alt>
+            </div>
+          </div>
+          <div class="swiper-slide ratio ratio-4x3">
+            <div class="comparison is-fluid">
+              <img src="assets/img/results/1.jpg" alt>
+              <img src="assets/img/results/2.jpg" alt>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section-solution">
+    <div class="container">
+
+      <h2 class="heading h2">
+        <b>Silane Guard</b> – простое<br>
+        <span>решение от царапин</span>
+      </h2>
+
+      <div class="panel is-card">
+        <div class="panel-content">
+          <p>Новые потертости и царапины разной глубины - это <strong>регулярная боль всех автомобилистов</strong>. Появляются часто и быстро – выводятся сложно и дорого!</p>
+          <p>&nbsp;</p>
+          <p>Для решения этих проблем Японская кампания Willson изобрелала свое <strong>уникальное средство - Silane Guard</strong>.</p>
+          <p>&nbsp;</p>
+          <p>С его помощью вы <strong>уберёте все царапины, добавите блеска</strong> и насыщенности для лакокрасочного покрытия вашего автомобиля.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section-slider" id="results">
+    <div class="container">
+
+      <h2 class="heading h2">
+        Результаты клиентов
+      </h2>
+
+      <div class="swiper is-overflow-visible" data-swiper="carousel">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide ratio ratio-4x3">
+            <img src="assets/img/results/1.jpg" alt>
+          </div>
+          <div class="swiper-slide ratio ratio-4x3">
+            <img src="assets/img/results/2.jpg" alt>
+          </div>
+          <div class="swiper-slide ratio ratio-4x3">
+            <img src="assets/img/results/3.jpg" alt>
+          </div>
+          <div class="swiper-slide ratio ratio-4x3">
+            <img src="assets/img/results/4.jpg" alt>
+          </div>
+          <div class="swiper-slide ratio ratio-4x3">
+            <img src="assets/img/results/5.jpg" alt>
+          </div>
+          <div class="swiper-slide ratio ratio-4x3">
+            <img src="assets/img/results/6.jpg" alt>
+          </div>
+          <div class="swiper-slide ratio ratio-4x3">
+            <img src="assets/img/results/7.jpg" alt>
+          </div>
+          <div class="swiper-slide ratio ratio-4x3">
+            <img src="assets/img/results/8.jpg" alt>
+          </div>
+          <div class="swiper-slide ratio ratio-4x3">
+            <img src="assets/img/results/9.jpg" alt>
+          </div>
+          <div class="swiper-slide ratio ratio-4x3">
+            <img src="assets/img/results/10.jpg" alt>
+          </div>
+          <div class="swiper-slide ratio ratio-4x3">
+            <img src="assets/img/results/11.jpg" alt>
+          </div>
+          <div class="swiper-slide ratio ratio-4x3">
+            <img src="assets/img/results/12.jpg" alt>
+          </div>
+          <div class="swiper-slide ratio ratio-4x3">
+            <img src="assets/img/results/13.jpg" alt>
+          </div>
+          <div class="swiper-slide ratio ratio-4x3">
+            <img src="assets/img/results/14.jpg" alt>
+          </div>
+          <div class="swiper-slide ratio ratio-4x3">
+            <img src="assets/img/results/15.jpg" alt>
+          </div>
+          <div class="swiper-slide ratio ratio-4x3">
+            <img src="assets/img/results/16.jpg" alt>
+          </div>
+          <div class="swiper-slide ratio ratio-4x3">
+            <img src="assets/img/results/17.jpg" alt>
+          </div>
+          <div class="swiper-slide ratio ratio-4x3">
+            <img src="assets/img/results/18.jpg" alt>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section-quiz">
+    <div class="container">
+
+      <div class="swiper quiz" data-swiper="quiz">
+        <div class="swiper-caption h2">
+          Узнайте актуальность данного товара ответив на 3 простых вопроса за <b>30 секунд</b>!
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+
+            <fieldset class="fieldset">
+              <div class="fieldset-legend">
+                <div class="numbox is-small">1</div>
+                <span>Какой эффект вы хотите получить?</span>
+              </div>
+
+              <label class="checkbox">
+                <input class="checkbox-hidden" type="radio" name="question[1]"
+                  value="Удаление царапин и добавление насыщенности краски авто">
+                <span class="checkbox-caption">Удаление царапин и добавление насыщенности краски авто</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox-hidden" type="radio" name="question[1]"
+                  value="Защита от грязи и пыль">
+                <span class="checkbox-caption">Защита от грязи и пыль</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox-hidden" type="radio" name="question[1]"
+                  value="Оба варианта">
+                <span class="checkbox-caption">Оба варианта</span>
+              </label>
+            </fieldset>
+
+          </div>
+          <div class="swiper-slide">
+
+            <fieldset class="fieldset">
+              <div class="fieldset-legend">
+                <div class="numbox is-small">2</div>
+                <span>Какой возраст вашей машины?</span>
+              </div>
+
+              <label class="checkbox">
+                <input class="checkbox-hidden" type="radio" name="question[2]"
+                  value="1990-2000 год">
+                <span class="checkbox-caption">1990-2000 год</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox-hidden" type="radio" name="question[2]"
+                  value="2001-2010 год">
+                <span class="checkbox-caption">2001-2010 год</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox-hidden" type="radio" name="question[2]"
+                  value="2011-2022 год">
+                <span class="checkbox-caption">2011-2022 год</span>
+              </label>
+            </fieldset>
+
+          </div>
+          <div class="swiper-slide">
+
+            <fieldset class="fieldset">
+              <div class="fieldset-legend">
+                <div class="numbox is-small">3</div>
+                <span>Какая сложность повреждений лакокрасочного покрытия?</span>
+              </div>
+
+              <label class="checkbox">
+                <input class="checkbox-hidden" type="radio" name="question[3]"
+                  value="Паутинка (мелкие царапины)">
+                <span class="checkbox-caption">Паутинка (мелкие царапины)</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox-hidden" type="radio" name="question[3]"
+                  value="Потертость (об другой объект)">
+                <span class="checkbox-caption">Потертость (об другой объект)</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox-hidden" type="radio" name="question[3]"
+                  value="Множественные глубокие царапины">
+                <span class="checkbox-caption">Множественные глубокие царапины</span>
+              </label>
+            </fieldset>
+
+          </div>
+        </div>
+        <div class="swiper-footer">
+          <button class="swiper-next button is-fluid" type="button">Далее</button>
+          <button class="swiper-send button is-fluid is-hidden" type="button">Отправить ответы</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section-working">
+    <div class="container">
+
+      <h2 class="heading h2">
+        Как это работает?
+      </h2>
+
+      <div class="grid">
+        <div class="grid-item">
+
+          <div class="panel is-special">
+            <div class="panel-head">
+              <div class="numbox has-gradient">01</div>
+            </div>
+            <div class="panel-body">
+              <h4>Универсальность</h4>
+              <small>Благодаря уникальному химическому составу, Silane Guard сочетается с любым цветом и качеством покраски автомобиля</small>
+            </div>
+          </div>
+
+        </div>
+        <div class="grid-item">
+
+          <div class="panel is-special">
+            <div class="panel-head">
+              <div class="numbox has-gradient">02</div>
+            </div>
+            <div class="panel-body">
+              <h4>Повышенный срок защиты</h4>
+              <small>Улучшенный состав делает покрытие более стойким. <br>А благодаря более мощному восстанавливающему эффекту скрывает любые царапины!</small>
+            </div>
+          </div>
+
+        </div>
+        <div class="grid-item">
+
+          <div class="panel is-special">
+            <div class="panel-head">
+              <div class="numbox has-gradient">03</div>
+            </div>
+            <div class="panel-body">
+              <h4>Эффективный состав</h4>
+              <small>Уникальность Silane Guard в том, что он не требует предварительных процедур перед использованием (только мойку)</small>
+            </div>
+          </div>
+
+        </div>
+        <div class="grid-item">
+
+          <div class="panel is-special">
+            <div class="panel-head">
+              <div class="numbox has-gradient">04</div>
+            </div>
+            <div class="panel-body">
+              <h4>Просто в использовании</h4>
+              <small>В комплект входит специальная губка и микрофибровое полотенце от производителя, которых достаточно для максимально эффективного нанесения</small>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section-reviews" id="reviews">
+    <div class="container">
+
+      <h2 class="heading h2">
+        Отзывы
+      </h2>
+
+      <div class="widget">
+        <script id="reviews_widget">
+          (function () {
+            const iframe = document.createElement('iframe')
+            iframe.setAttribute('frameborder', 0)
+            iframe.setAttribute('src', 'reviews/reviews.html')
+            document.getElementById('reviews_widget').after(iframe)
+            iframe.contentWindow.addEventListener('message', event => {
+              iframe.height = event.data.height
+              iframe.style.cssText = event.data.styles
+            })
+            iframe.contentWindow.addEventListener('load', event => {
+              event.target.head.insertAdjacentHTML(
+                'beforeend', '<link rel="stylesheet" href="../assets/css/reviews-theme.css">'
+              )
+            })
+          })()
+        </script>
+      </div>
+
+      <div class="panel">
+        <div class="panel-icon ratio">
+          <img src="assets/img/icons/shield.svg" alt>
+        </div>
+        <div class="panel-body">
+          <p><strong>Гарантированный</strong> результат заявленный на сайте - либо вернём 100% стоимости товара! Обмен/Возврат в течении 14 дней</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section-counterfeit">
+    <div class="container">
+
+      <h2 class="heading h2">
+        <b>Остерегайтесь подделок</b><br>
+        <span>отличия оригинала</span>
+      </h2>
+
+      <div class="grid">
+        <div class="grid-item" data-index="1">
+
+          <div class="panel">
+            <div class="panel-icon ratio">
+              <img src="assets/img/icons/o1.png" alt>
+            </div>
+            <div class="panel-body">
+              <p>Плотная многослойная <strong>упаковка</strong></p>
+            </div>
+          </div>
+
+        </div>
+        <div class="grid-item" data-index="2">
+
+          <div class="panel">
+            <div class="panel-icon ratio">
+              <img src="assets/img/icons/o2.png" alt>
+            </div>
+            <div class="panel-body">
+              <p><strong>Качественный</strong> принт со свето-отражателем на передней части упаковки</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="grid-item" data-index="3">
+
+          <div class="panel">
+            <div class="panel-icon ratio">
+              <img src="assets/img/icons/o3.png" alt>
+            </div>
+            <div class="panel-body">
+              <p><strong>Пломбированная</strong> бутылочка одноразовой лентой</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="grid-item" data-index="4">
+
+          <div class="panel">
+            <div class="panel-icon ratio">
+              <img src="assets/img/icons/o4.png" alt>
+            </div>
+            <div class="panel-body">
+              <p><strong>Полный комплект</strong> (губка, тряпочка из микрофибры, средство)</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="counterfeit">
+        <img class="counterfeit-image" src="assets/img/counterfeit.png" alt>
+        <img class="counterfeit-alert" src="assets/img/counterfeit-alert.png" alt>
+      </div>
+
+      <button class="button is-large is-fluid" data-micromodal-trigger="modal-order">Заказать</button>
+
+    </div>
+  </section>
+
+  <section class="section section-instruction">
+    <div class="container">
+
+      <h2 class="heading h2">
+        30 минут достаточно<br>
+        чтобы покрыть авто!
+      </h2>
+
+      <div class="grid">
+        <div class="grid-item">
+          <div class="numbox has-gradient">1</div>
+          <p>Нанесите средство на кузов <br>с помощью губки</p>
+          <div class="ratio ratio-5x3">
+            <img src="assets/img/instruction/1.jpg" alt>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="numbox has-gradient">2</div>
+          <p>Через 10-15 минут <br>протрите салфеткой</p>
+          <div class="ratio ratio-5x3">
+            <img src="assets/img/instruction/2.jpg" alt>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="numbox has-gradient">3</div>
+          <p>Радуйтесь <br>новому автомобилю</p>
+          <div class="ratio ratio-5x3">
+            <img src="assets/img/instruction/3.jpg" alt>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section-video">
+    <div class="container">
+
+      <h2 class="heading h2">
+        Больше чем просто видео!
+      </h2>
+
+      <video class="video-js vjs-fluid" poster="assets/video/poster.png" preload="none" controls data-setup>
+        <source src="assets/video/video.mp4" type="video/mp4">
+      </video>
+
+    </div>
+  </section>
+
+  <section class="section section-ordering">
+    <div class="container">
+
+      <h2 class="heading h2">
+        Как заказать?
+      </h2>
+
+      <div class="grid">
+        <div class="grid-item">
+
+          <div class="panel">
+            <div class="panel-head">
+              <div class="numbox is-large has-shadow has-gradient">1</div>
+            </div>
+            <div class="panel-body">
+              <p>Заполните форму заказа</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="grid-item">
+
+          <div class="panel">
+            <div class="panel-head">
+              <div class="numbox is-large has-shadow has-gradient">2</div>
+            </div>
+            <div class="panel-body">
+              <p>Менеджер проконсультирует и подтвердит заказ</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="grid-item">
+
+          <div class="panel">
+            <div class="panel-head">
+              <div class="numbox is-large has-shadow has-gradient">3</div>
+            </div>
+            <div class="panel-body">
+              <p>Доставим за 1-3 дня</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="grid-item">
+
+          <div class="panel">
+            <div class="panel-head">
+              <div class="numbox is-large has-shadow has-gradient">4</div>
+            </div>
+            <div class="panel-body">
+              <p>Никаких предоплат. Оплата после получения заказа</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section-promo extra">
+    <div class="container">
+
+      <h2 class="heading h1">
+        Невидимая защита вашего автомобиля
+      </h2>
+
+      <div class="grid">
+        <div class="grid-item">
+
+          <div class="panel is-inline">
+            <div class="panel-icon is-large ratio">
+              <img src="assets/img/icons/a1.png" alt>
+            </div>
+            <div class="panel-body">
+              <p>В 7-10 раз <strong>дешевле</strong> <br>автосервиса</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="grid-item">
+
+          <div class="panel is-inline">
+            <div class="panel-icon is-large ratio">
+              <img src="assets/img/icons/a2.png" alt>
+            </div>
+            <div class="panel-body">
+              <p><strong>Восстановит</strong> краску <br>до заводского состояния</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="grid-item">
+
+          <div class="panel is-inline">
+            <div class="panel-icon is-large ratio">
+              <img src="assets/img/icons/a3.png" alt>
+            </div>
+            <div class="panel-body">
+              <p><strong>Защитит</strong> от грязи <br>и пыли</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="promotion">
+        <img class="promotion-image" src="assets/img/product.png" alt>
+        <div class="promotion-sale">
+          <div class="promotion-sale-value">-38%</div>
+          <div class="promotion-sale-extra" data-value="скидка скидка скидка "></div>
+        </div>
+        <div class="promotion-price">
+          <ins>489<small>₴</small></ins>
+          <del>790</del>
+        </div>
+        <div class="promotion-gift" data-micromodal-trigger="modal-deferred" data-deferred-cancel></div>
+      </div>
+
+      <div class="formbox">
+        <div class="formbox-head">
+          <h4>Оставьте заявку <br>и наш менеджер свяжется с вами <br>в течении 10-15 минут</h4>
+        </div>
+        <div class="formbox-body">
+
+          <form class="form" method="post" action="result.php">
+            <div class="form-field field">
+              <input class="field-input" type="text" name="name" placeholder="Ваше имя" required>
+            </div>
+            <div class="form-field field">
+              <input class="field-input" type="tel" name="phone" placeholder="Номер телефона" required>
+            </div>
+
+            <button class="form-submit button" type="submit">Заказать</button>
+          </form>
+
+        </div>
+        <div class="formbox-meta">
+          <small>В наличии осталось: <b><mark data-count>8</mark> шт</b></small>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section-extra" id="extra">
+    <div class="container">
+
+      <h2 class="heading h2">
+        Вместе выгоднее!
+      </h2>
+
+      <div class="grid">
+        <div class="grid-item">
+
+          <div class="product">
+            <div class="product-layout">
+              <div class="product-image ratio">
+                <img src="assets/img/product.png" alt>
+              </div>
+              <div class="product-body">
+                <div class="product-sale">
+                  <small>скидка</small> -50%
+                </div>
+                <div class="product-head">
+                  <div class="product-title">Очиститель стекол + жидкое стекло</div>
+                </div>
+                <div class="product-foot">
+                  <div class="product-price">
+                    <del>935грн</del> 659 <small>грн</small>
+                  </div>
+                  <div class="product-extra">
+                    <button class="button is-small is-fluid" data-micromodal-trigger="modal-order">Хочу комлпект</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product-content">
+              1. Профессиональное средство <br>
+              2. Гарантия качества <br>
+              3. Уникальный состав <br>
+              4. Разработан в Японии <br>
+              5. Подходит каждому автомобилю <br>
+              6. Средства хватает на 5-7 приёмов
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-contact contact">
+        <h5>С нами можно связаться</h5>
+        <a href="mailto:silaneguard.ukraine@gmail.com">silaneguard.ukraine@gmail.com</a><br>
+        <a href="mailto:suppot.silaneguard.ukraine@gmail.com">suppot.silaneguard.ukraine@gmail.com</a>
+
+        <ul class="social">
+          <li class="social-item">
+            <a class="social-link" href="#" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </li>
+          <li class="social-item">
+            <a class="social-link" href="#" target="_blank">
+              <i class="fa-brands fa-telegram"></i>
+            </a>
+          </li>
+          <li class="social-item">
+            <a class="social-link" href="#" target="_blank">
+              <i class="fa-brands fa-viber"></i>
+            </a>
+          </li>
+        </ul>
+
+        <p>&nbsp;</p>
+        <h5>Наш Офис</h5>
+        <p>Киев, 01001, ул. Житомирська 20, 4 этаж <br>График и время работы: Пн-Пт 09:00-19:00</p>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3070.6254974354138!2d30.510208577443333!3d50.45581748598132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce5cc625e317%3A0xc9901694b4d14223!2zVmVseWthIFpoeXRvbXlyc2thIFN0LCAyMCwgNCDRjdGC0LDQtiwgS3lpdiwgVWtyYWluZSwgMDIwMDA!5e0!3m2!1sen!2sde!4v1652815357228!5m2!1sen!2sde" height="112" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+        <p>&nbsp;</p>
+        <h5>Кампания</h5>
+        <p>ТОВ “ЯЗОН” 985792340935</p>
+        <a data-micromodal-trigger="modal-policy">Политика конфиденциальности</a><br>
+        <a data-micromodal-trigger="modal-terms">Пользовательское соглашение</a>
+
+        <p>&nbsp;</p>
+        <p><small>Все права защищены. <br>Копирование текста или его части возможно только с разрешения правообладателя.</small></p>
+      </div>
+
+      <div class="footer-copyright">Willson Сopyright © 2013-2022</div>
+    </div>
+  </footer>
+
+  <div class="modals">
+    <div class="modal" id="modal-deferred">
+      <div class="modal-overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal-container container">
+          <button class="modal-close x-close" data-micromodal-close></button>
+
+          <div class="formbox">
+            <div class="formbox-head is-compact">
+              <h4>Хватай свой подарок!</h4>
+              <div class="formbox-description">
+                Всего 2 незаполненных строчки отделяют тебя от ценного подарка который оценит каждый водитель.
+              </div>
+            </div>
+            <div class="formbox-body">
+
+              <form class="form" method="post" action="result.php">
+                <div class="form-field field">
+                  <input class="field-input" type="text" name="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-field field">
+                  <input class="field-input" type="tel" name="phone" placeholder="Номер телефона" required>
+                </div>
+
+                <button class="form-submit button" type="submit">Заказать</button>
+              </form>
+
+            </div>
+            <div class="formbox-meta is-giftbox">
+              <small>Осталось всего <b><mark data-count>8</mark></b><br>наборов с подарками!</small>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-results">
+      <div class="modal-overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal-container container">
+          <button class="modal-close x-close" data-micromodal-close></button>
+
+          <div class="formbox">
+            <div class="formbox-head is-compact">
+              <h4>Мы получили ваши ответы!</h4>
+              <div class="formbox-description">
+                А пока наш менеджер их просматривает, заполните ваши данные чтобы мы знали как с вами связаться.
+              </div>
+            </div>
+            <div class="formbox-body">
+
+              <form class="form" method="post" action="result.php">
+                <div class="form-field field">
+                  <input class="field-input" type="text" name="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-field field">
+                  <input class="field-input" type="tel" name="phone" placeholder="Номер телефона" required>
+                </div>
+
+                <button class="form-submit button" type="submit">Заказать</button>
+              </form>
+
+            </div>
+            <div class="formbox-meta is-giftbox">
+              <small>Гарантированный подарок <br>к каждому заказу!</small>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-product">
+      <div class="modal-overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal-container container">
+          <button class="modal-close x-close" data-micromodal-close></button>
+
+          <div id="modal-product-content"></div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-order">
+      <div class="modal-overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal-container container">
+          <button class="modal-close x-close" data-micromodal-close></button>
+
+          <div class="formbox">
+            <div class="formbox-head">
+              <h4>Оставьте заявку <br>и наш менеджер свяжется с вами <br>в течении 10-15 минут</h4>
+            </div>
+            <div class="formbox-body">
+
+              <form class="form" method="post" action="result.php">
+                <div class="form-field field">
+                  <input class="field-input" type="text" name="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-field field">
+                  <input class="field-input" type="tel" name="phone" placeholder="Номер телефона" required>
+                </div>
+
+                <button class="form-submit button" type="submit">Заказать</button>
+              </form>
+
+            </div>
+            <div class="formbox-meta">
+              <small>В наличии осталось: <b><mark data-count>8</mark> шт</b></small>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-about">
+      <div class="modal-overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal-container">
+          <button class="modal-close x-close" data-micromodal-close></button>
+
+          <div class="section section-about">
+            <div class="container">
+
+              <h2 class="heading h2">
+                О компании
+              </h2>
+
+              <div class="entry">
+                <div class="entry-media ratio">
+                  <img src="assets/img/about.jpg" alt>
+                </div>
+                <div class="entry-text">
+                  <p>Здравствуйте, меня зовут <strong>Александр Руденко</strong>. Мне 34 года, и моя кампания является официальным представителем бренда WILLSON в Украине.</p>
+                </div>
+              </div>
+
+              <div class="panel is-card is-compact">
+                <div class="panel-content">
+                  <p>С самого дества мой отец привил мне любов к автомобилям. Впервые я сел за руль когда мне было 7 лет (розумееться педали нажимал не сам). А спустя ещё 6 лет - ездил в своем селе абсолютно самостоятельно. Это были незабываемые эмоции. Но после серёзного повреждения машини из за своей неосторожности - я “молился” чтобы вообще мог сидеть, как минимум на стуле... Все решилось легче чем ожидал!</p>
+                  <p>&nbsp;</p>
+                  <p>Я вырос, игрушки тоже подорожали! А царапины и повреждения машины никуда не делись. Спустя несколько конфликтных поездок в автосервис - решил оставить все как есть, и ездил на поцарапанной машине несколько лет.</p>
+                  <p>&nbsp;</p>
+                  <p>В 2013 году я путешествовал по Германии. Именно там после маленькой царапины арендованной машины, в панике, начал искать способ как избавиться от неё (ибо залоговая сумма была для меня очень значимой).</p>
+                  <p>&nbsp;</p>
+                  <p>Приехавши на скромную станцию по покраске авто, ребята показали мне средства этой кампании. Я был удивлён результату, после того как они с легкость сделали ЛКП ещё лучше чем оно быо до этого.</p>
+                  <p>&nbsp;</p>
+                  <p>Так и началось моё знакомство с этим продуктом! Спустя 13 долгих месяцев переговоров, а также не малой суммы взятой в кредит - началось моё продвижение данного бренда по всей Украине.</p>
+                  <p>&nbsp;</p>
+                  <p>На данный момент мы являемся лидером рынка в данном сегменте. А кампания WILLSON приуспела ещё в 47 странах мира. Именно поэтому я не буду говорить о качестве и приемуществах наших товаров, ибо наши клиенты давно уже все сказали!)</p>
+                  <p>&nbsp;</p>
+                  <p>&nbsp;</p>
+                </div>
+                <div class="panel-footer">
+                  <span>Дата редактирования:</span>
+                  <span>24.09.2014</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-contact">
+      <div class="modal-overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal-container">
+          <button class="modal-close x-close" data-micromodal-close></button>
+
+          <div class="section section-contact">
+            <div class="container">
+
+              <h2 class="heading h2">
+                Наша команда всегда на связи
+              </h2>
+
+              <div class="banner">
+                <div class="banner-content">
+                  <div class="banner-text">
+                    <p>График Кол-центра</p>
+                    <small>Пн-Вс 09:00-20:00</small>
+                  </div>
+                  <ul class="banner-social social">
+                    <li class="social-item">
+                      <a class="social-link" href="#" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                      </a>
+                    </li>
+                    <li class="social-item">
+                      <a class="social-link" href="#" target="_blank">
+                        <i class="fa-brands fa-telegram"></i>
+                      </a>
+                    </li>
+                    <li class="social-item">
+                      <a class="social-link" href="#" target="_blank">
+                        <i class="fa-brands fa-viber"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="contact">
+                <h5>Отдел качества</h5>
+                <a href="mailto:silaneguard.ukraine@gmail.com">silaneguard.ukraine@gmail.com</a>
+                <p>&nbsp;</p>
+                <h5>Тех поддержка</h5>
+                <a href="mailto:suppot.silaneguard.ukraine@gmail.com">suppot.silaneguard.ukraine@gmail.com</a>
+                <p>&nbsp;</p>
+                <h5>Наш Офис</h5>
+                <p>Киев, 01001, ул. Житомирська 20, 4 этаж <br>График и время работы: Пн-Пт 09:00-19:00</p>
+                <p>&nbsp;</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3070.6254974354138!2d30.510208577443333!3d50.45581748598132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce5cc625e317%3A0xc9901694b4d14223!2zVmVseWthIFpoeXRvbXlyc2thIFN0LCAyMCwgNCDRjdGC0LDQtiwgS3lpdiwgVWtyYWluZSwgMDIwMDA!5e0!3m2!1sen!2sde!4v1652815357228!5m2!1sen!2sde" height="112" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <p>&nbsp;</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-policy">
+      <div class="modal-overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal-container">
+          <button class="modal-close x-close" data-micromodal-close></button>
+
+          <div class="section section-about">
+            <div class="container">
+
+              <h2 class="heading h2">
+                Политика конфиденциальности
+              </h2>
+
+              <div class="panel is-card is-compact">
+                <div class="panel-content">
+                  <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Агентство языкового продолжил путь предложения назад возвращайся? Агентство взгляд проектах его путь о заголовок ему первую, безопасную на берегу ты переписывается над себя языком которой вскоре предложения даль послушавшись, даже всемогущая свой маленький рыбными до они lorem. Знаках безорфографичный текстами силуэт осталось использовало вопрос маленькая рукопись переписали, это, но себя, правилами предложения все. Семь оксмокс безорфографичный встретил текстами единственное она злых это семантика, гор силуэт строчка использовало правилами его переписали пояс от всех живет lorem деревни вдали на берегу. Но безорфографичный дороге, вершину, домах предупредила, мир пустился сих не правилами приставка вдали рукопись!</p>
+                </div>
+                <div class="panel-footer">
+                  <span>Дата редактирования:</span>
+                  <span>24.09.2014</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-terms">
+      <div class="modal-overlay" tabindex="-1" data-micromodal-close>
+        <div class="modal-container">
+          <button class="modal-close x-close" data-micromodal-close></button>
+
+          <div class="section section-about">
+            <div class="container">
+
+              <h2 class="heading h2">
+                Пользовательское соглашение
+              </h2>
+
+              <div class="panel is-card is-compact">
+                <div class="panel-content">
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nesciunt illum repellat numquam fugit vel quod maiores consequuntur at asperiores provident sapiente est dolores alias dolore ducimus error eius, ullam et? Accusamus provident harum eligendi voluptatibus quam doloribus optio, fugit excepturi dolorum amet accusantium cum in ab, quibusdam laudantium quis natus illum esse. Sit dignissimos enim, earum similique aut laudantium deserunt nobis iusto provident dolorum ipsa eveniet molestias in assumenda aperiam, saepe doloremque quod mollitia odio fugiat vero voluptas ea. Hic repudiandae ipsam quas perferendis voluptas, corrupti ab at. Autem, adipisci! Minus obcaecati animi rem officiis assumenda aliquam nobis nostrum.</p>
+                </div>
+                <div class="panel-footer">
+                  <span>Дата редактирования:</span>
+                  <span>24.09.2014</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

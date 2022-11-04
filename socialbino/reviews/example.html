@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Reviews Example</title>
+</head>
+<body>
+
+  <script id="reviews_widget">
+    (function () {
+      const iframe = document.createElement('iframe')
+      iframe.setAttribute('frameborder', 0)
+      iframe.setAttribute('src', 'reviews.html')
+      document.getElementById('reviews_widget').after(iframe)
+      iframe.contentWindow.addEventListener('message', event => {
+        iframe.height = event.data.height
+        iframe.style.cssText = event.data.styles
+      })
+    })()
+  </script>
+
+</body>
+</html>

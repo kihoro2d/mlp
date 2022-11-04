@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Reviews</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
+
+  <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css">
+  <link rel="stylesheet" href="https://unpkg.com/vue-image-lightbox@7.2.0/dist/vue-image-lightbox.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+</head>
+<body>
+
+  <div id="app" class="app is-loading">
+    <div class="app-layout">
+      <div class="app-layout-head">
+
+        <div class="summary">
+          <div class="summary-column">Общий <br>рейтинг</div>
+          <div class="summary-rating">{{ summaryRating }}</div>
+          <div class="summary-column">
+
+            <div class="star-rating">
+              <svg viewBox="0 0 40 38" width="40"><use href="#icon-star"></use></svg>
+              <svg viewBox="0 0 40 38" width="40"><use href="#icon-star"></use></svg>
+              <svg viewBox="0 0 40 38" width="40"><use href="#icon-star"></use></svg>
+              <svg viewBox="0 0 40 38" width="40"><use href="#icon-star"></use></svg>
+              <svg viewBox="0 0 40 38" width="40"><use href="#icon-star"></use></svg>
+              <div class="star-rating-progress" :style="starRatingProgress(summaryRating)"></div>
+            </div>
+
+            <div>{{ summaryQuantity }} отзывов</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="app-layout-button button" @click="overlayOpen('review', true)">Написать отзыв</div>
+
+      <div class="app-layout-scroller" ref="scroller">
+        <transition-group name="list" tag="div">
+
+          <div class="list-item" v-for="(review, i) in reviewsShown" v-bind:key="review">
+            <div class="list-item-root">
+
+              <div class="card">
+                <div class="card-head">
+                  <div class="card-head-main">
+                    <div>{{ review.name }}</div>
+
+                    <div class="star-rating">
+                      <svg viewBox="0 0 40 38" width="40"><use href="#icon-star"></use></svg>
+                      <svg viewBox="0 0 40 38" width="40"><use href="#icon-star"></use></svg>
+                      <svg viewBox="0 0 40 38" width="40"><use href="#icon-star"></use></svg>
+                      <svg viewBox="0 0 40 38" width="40"><use href="#icon-star"></use></svg>
+                      <svg viewBox="0 0 40 38" width="40"><use href="#icon-star"></use></svg>
+                      <div class="star-rating-progress" :style="starRatingProgress(review.stars)"></div>
+                    </div>
+
+                  </div>
+                  <div class="card-head-date">
+                    {{ moment(review.date).format('DD MMMM YYYY') }} <br>
+                    {{ moment(review.date).format('HH:mm') }}
+                  </div>
+                </div>
+
+                <div class="card-body">
+                  {{ review.message }}
+                </div>
+
+                <div class="card-body" v-if="review.files.length">
+                  <ul class="gallery">
+                    <li class="gallery-item" v-for="(file, id) in review.files">
+                      <img class="gallery-image" :src="file" alt @click="openGallery(i, id)">
+                    </li>
+                  </ul>
+                  <light-box :ref="`lightbox-${i}`" :media="mediaFiles(review.files)" :show-light-box="false" />
+                </div>
+
+                <div class="card-foot">
+                  <div class="card-foot-reply">
+                    <div class="link" @click="overlayOpen('answer', i)">
+                      <svg width="16" height="16"><use href="#icon-return"></use></svg> Ответить
+                    </div>
+                  </div>
+                  <div class="card-foot-votes">
+                    <div class="link" :disabled="review.votes.v === true" @click="review.votes.v = true">
+                      <svg width="16" height="16"><use href="#icon-thumb-up"></use></svg>
+                      {{ review.votes.up + (review.votes.v === true && 1) }}
+                    </div>
+                    <div class="link" :disabled="review.votes.v === false" @click="review.votes.v = false">
+                      <svg width="16" height="16"><use href="#icon-thumb-down"></use></svg>
+                      {{ review.votes.down + (review.votes.v === false && 1) }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="list-item-list" v-if="review.replies.length">
+
+              <div class="card" v-for="review in review.replies">
+                <div class="card-head">
+                  <div class="card-head-main">
+                    {{ review.name }}
+                  </div>
+                  <div class="card-head-date">
+                    {{ moment(review.date).format('DD MMMM YYYY') }} <br>
+                    {{ moment(review.date).format('HH:mm') }}
+                  </div>
+                </div>
+                <div class="card-body">
+                  {{ review.message }}
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </transition-group>
+
+        <infinite-loading v-if="!preview" spinner="spiral" @infinite="infiniteHandler" />
+      </div>
+
+      <div class="app-layout-button link" @click="disabledPreview">Смотреть все отзывы</div>
+    </div>
+
+    <div class="overlay" style="display:none" v-show="overlay.review">
+      <div class="overlay-inner">
+        <div class="overlay-head">
+          <div class="overlay-head-title">Написать отзыв</div>
+          <div class="overlay-head-close" @click="overlay.review = false">
+            <svg width="16" height="16"><use href="#icon-close"></use></svg>
+          </div>
+        </div>
+        <div class="overlay-body">
+
+          <form class="form" ref="reviewForm" @submit="onSubmitReviewForm">
+            <div class="form-body">
+              <div class="form-field input-rating" ref="inputRating">
+                <input type="hidden" name="rating">
+                <div class="input-rating-item" @click="updateInputRating(1)" title="Плохой">
+                  <svg viewBox="0 0 40 38" width="40"><use href="#icon-star"></use></svg>
+                </div>
+                <div class="input-rating-item" @click="updateInputRating(2)" title="Так себе">
+                  <svg viewBox="0 0 40 38" width="40"><use href="#icon-star"></use></svg>
+                </div>
+                <div class="input-rating-item" @click="updateInputRating(3)" title="Нормальный">
+                  <svg viewBox="0 0 40 38" width="40"><use href="#icon-star"></use></svg>
+                </div>
+                <div class="input-rating-item" @click="updateInputRating(4)" title="Хороший">
+                  <svg viewBox="0 0 40 38" width="40"><use href="#icon-star"></use></svg>
+                </div>
+                <div class="input-rating-item" @click="updateInputRating(5)" title="Отличный">
+                  <svg viewBox="0 0 40 38" width="40"><use href="#icon-star"></use></svg>
+                </div>
+              </div>
+              <div class="form-field field">
+                <div class="field-caption">Ваше имя и фамилия</div>
+                <input class="field-input" type="text" name="name" :disabled="usrname" required>
+              </div>
+              <div class="form-field field">
+                <div class="field-caption">Электронная почта</div>
+                <input class="field-input" type="email" name="email" :disabled="usrmail" required>
+              </div>
+              <div class="form-field field">
+                <div class="field-caption">Комментарий</div>
+                <textarea class="field-input" rows="6" name="message" required></textarea>
+              </div>
+              <div class="form-field field">
+                <div class="field-caption">Добавить фотографии</div>
+                <input class="field-input" type="file" name="upload" accept="image/*" multiple>
+              </div>
+            </div>
+            <div class="form-foot">
+              <button class="form-button button" type="button" @click="overlay.review = false">Отменить</button>
+              <button class="form-button button button--accent">Оставить отзыв</button>
+            </div>
+            <div class="form-info">
+              Чтобы ваш отзыв либо комментарий прошел модерацию и был опубликован, ознакомьтесь, пожалуйста, с <a href="#" target="_blank">нашими правилами</a>.
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay" style="display:none" v-show="Number.isInteger(overlay.answer)">
+      <div class="overlay-inner">
+        <div class="overlay-head">
+          <div class="overlay-head-title">Ответить</div>
+          <div class="overlay-head-close" @click="overlay.answer = false">
+            <svg width="16" height="16"><use href="#icon-close"></use></svg>
+          </div>
+        </div>
+        <div class="overlay-body">
+
+          <form class="form" ref="answerForm" @submit="onSubmitAnswerForm">
+            <div class="form-body">
+              <div class="form-field field">
+                <div class="field-caption">Ваше имя и фамилия</div>
+                <input class="field-input" type="text" name="name" :disabled="usrname" required>
+              </div>
+              <div class="form-field field">
+                <div class="field-caption">Электронная почта</div>
+                <input class="field-input" type="email" name="email" :disabled="usrmail" required>
+              </div>
+              <div class="form-field field">
+                <div class="field-caption">Комментарий</div>
+                <textarea class="field-input" rows="6"name="message" required></textarea>
+              </div>
+            </div>
+            <div class="form-foot">
+              <button class="form-button button" type="button" @click="overlay.answer = false">Отменить</button>
+              <button class="form-button button button--accent">Ответить</button>
+            </div>
+            <div class="form-info">
+              Чтобы ваш отзыв либо комментарий прошел модерацию и был опубликован, ознакомьтесь, пожалуйста, с <a href="#" target="_blank">нашими правилами</a>.
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <svg style="display:none">
+      <defs>
+        <symbol viewBox="0 0 40 38" id="icon-star">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="m19.1147.533962c.3614-.711949 1.409-.711949 1.7704 0l5.4156 10.644638c.1443.283.4223.479.7439.524l12.1088 1.7076c.81.1143 1.1331 1.0805.5478 1.634l-8.7633 8.2861c-.2322.2197-.3389.5373-.2833.8476l2.0679 11.7c.139.7827-.7078 1.3797-1.433 1.0097l-10.8297-5.5231c-.2878-.1467-.632-.1467-.9198 0l-10.83049 5.5231c-.72439.37-1.57126-.227-1.43225-1.0097l2.06797-11.7c.05485-.3103-.0511-.6279-.28405-.8476l-8.761789-8.2861c-.586123-.5535-.2630038-1.5197.547049-1.634l12.10946-1.7076c.3209-.045.5996-.241.7432-.524z"></path>
+        </symbol>
+        <symbol viewBox="0 0 24 24" id="icon-return">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4C5.55228 4 6 4.44772 6 5V11C6 12.6569 7.34315 14 9 14H16.5858L13.7929 11.2071C13.4024 10.8166 13.4024 10.1834 13.7929 9.79289C14.1834 9.40237 14.8166 9.40237 15.2071 9.79289L20.4142 15L15.2071 20.2071C14.8166 20.5976 14.1834 20.5976 13.7929 20.2071C13.4024 19.8166 13.4024 19.1834 13.7929 18.7929L16.5858 16H9C6.23858 16 4 13.7614 4 11V5C4 4.44772 4.44772 4 5 4Z"></path>
+        </symbol>
+        <symbol viewBox="0 0 24 24" id="icon-thumb-up">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="m13.7636 3c-1.3664 0-2.4192 1.06133-2.6028 2.3092-.1437.97725-.4025 2.07528-.8113 2.73622-.2628.42492-.74183.92488-1.17742 1.33384-.32935-.2386-.73429-.37926-1.17208-.37926h-3c-1.10457 0-2 .89543-2 2v8c0 1.1046.89543 2 2 2h3c.65793 0 1.24165-.3177 1.60615-.808l.1019.0423c1.21635.5055 2.52045.7657 3.83765.7657h3.1918c.9112 0 1.7965-.3042 2.5153-.8643 1.1025-.8591 1.7472-2.1787 1.7472-3.5765v-4.8449c0-1.6568-1.3431-2.99999-3-2.99999h-1.7391l.2888-1.50042c.0335-.17386.0503-.35051.0503-.52756v-.84995c0-1.56649-1.2699-2.83638-2.8364-2.83638zm-3.7636 15.1898.4756.1977c.973.4043 2.0164.6125 3.0701.6125h3.1918c.4659 0 .9185-.1555 1.286-.4419.6162-.4802.9765-1.2177.9765-1.9989v-4.8449c0-.5523-.4477-1-1-1h-1.7391c-1.2562 0-2.2014-1.14449-1.964-2.37804l.2888-1.50043c.0095-.04927.0143-.09932.0143-.1495v-.84995c0-.46192-.3745-.83638-.8364-.83638-.2709 0-.5693.22817-.6241.60022-.1471 1.0007-.4469 2.45898-1.089 3.4972-.5407.87416-1.5315 1.77738-2.0266 2.20618-.0109.0095-.0175.0193-.0209.0265-.0017.0034-.0024.0059-.0027.0073-.0003.0012-.0003.0018-.0003.0019 0 0 0 .0001 0 0zm-2-7.1898h-3v8h3z"></path>
+        </symbol>
+        <symbol viewBox="0 0 24 24" id="icon-thumb-down" >
+          <path fill-rule="evenodd" clip-rule="evenodd" d="m13.7636 3c-1.3664 0-2.4192 1.06133-2.6028 2.3092-.1437.97725-.4025 2.07528-.8113 2.73622-.2628.42492-.74183.92488-1.17742 1.33384-.32935-.2386-.73429-.37926-1.17208-.37926h-3c-1.10457 0-2 .89543-2 2v8c0 1.1046.89543 2 2 2h3c.65793 0 1.24165-.3177 1.60615-.808l.1019.0423c1.21635.5055 2.52045.7657 3.83765.7657h3.1918c.9112 0 1.7965-.3042 2.5153-.8643 1.1025-.8591 1.7472-2.1787 1.7472-3.5765v-4.8449c0-1.6568-1.3431-2.99999-3-2.99999h-1.7391l.2888-1.50042c.0335-.17386.0503-.35051.0503-.52756v-.84995c0-1.56649-1.2699-2.83638-2.8364-2.83638zm-3.7636 15.1898.4756.1977c.973.4043 2.0164.6125 3.0701.6125h3.1918c.4659 0 .9185-.1555 1.286-.4419.6162-.4802.9765-1.2177.9765-1.9989v-4.8449c0-.5523-.4477-1-1-1h-1.7391c-1.2562 0-2.2014-1.14449-1.964-2.37804l.2888-1.50043c.0095-.04927.0143-.09932.0143-.1495v-.84995c0-.46192-.3745-.83638-.8364-.83638-.2709 0-.5693.22817-.6241.60022-.1471 1.0007-.4469 2.45898-1.089 3.4972-.5407.87416-1.5315 1.77738-2.0266 2.20618-.0109.0095-.0175.0193-.0209.0265-.0017.0034-.0024.0059-.0027.0073-.0003.0012-.0003.0018-.0003.0019 0 0 0 .0001 0 0zm-2-7.1898h-3v8h3z" transform="rotate(180, 12, 12)"></path>
+        </symbol>
+        <symbol viewBox="0 0 24 24" id="icon-close">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="m18.295 7.11511c.3894-.38936.3894-1.02064 0-1.41-.3893-.38936-1.0206-.38936-1.41 0l-4.885 4.88499-4.88499-4.88499c-.38936-.38936-1.02063-.38936-1.41 0-.38936.38936-.38936 1.02064 0 1.41l4.88499 4.88499-4.88499 4.885c-.38936.3894-.38936 1.0206 0 1.41.38937.3894 1.02064.3894 1.41 0l4.88499-4.885 4.885 4.885c.3894.3894 1.0207.3894 1.41 0 .3894-.3894.3894-1.0206 0-1.41l-4.885-4.885z"></path>
+        </symbol>
+      </defs>
+    </svg>
+  </div>
+
+  <script src="https://unpkg.com/vue@2.6.14/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/vue2-storage@6.1.3/dist/vue2-storage.min.js"></script>
+  <script src="https://unpkg.com/vue-infinite-loading@2.4.5/dist/vue-infinite-loading.js"></script>
+  <script src="https://unpkg.com/vue-lazyload@1.3.3/vue-lazyload.js"></script>
+  <script src="https://unpkg.com/vue-image-lightbox@7.2.0/dist/vue-image-lightbox.min.js"></script>
+  <script src="https://unpkg.com/lodash@4.17.21/lodash.min.js"></script>
+  <script src="https://unpkg.com/moment@2.29.3/min/moment.min.js"></script>
+  <script src="https://unpkg.com/moment@2.29.3/locale/ru.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
